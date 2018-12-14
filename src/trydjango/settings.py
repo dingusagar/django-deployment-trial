@@ -129,3 +129,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+DROPBOX_OAUTH2_TOKEN = 'zBxsqGWT-3AAAAAAAAAADtMkXICThzuLemowhG2biy9_AnnzX2Iu09gHh2CK2eSC'

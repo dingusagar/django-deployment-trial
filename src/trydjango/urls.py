@@ -18,7 +18,7 @@ from django.urls import include, path
 
 from pages.views import home_view, contact_view, about_view
 from django.conf.urls.static import static
-
+from django.conf import settings
 urlpatterns = [
     path('blog/', include('blog.urls')),
     path('courses/', include('courses.urls')),
