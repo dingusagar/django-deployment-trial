@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-
+from django.conf.urls import url, include
 from pages.views import home_view, contact_view, about_view
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth import views
 urlpatterns = [
     path('blog/', include('blog.urls')),
     path('courses/', include('courses.urls')),
@@ -27,8 +28,14 @@ urlpatterns = [
     path('about/<int:id>/', about_view, name='product-detail'),
     path('contact/', contact_view),
     path('admin/', admin.site.urls),
+
+]
+
+urlpatterns += [
+    url(r'^login/$', views.login, name='login'),
+    url(r'^logout/$', views.logout, name='logout'),
+    url(r'^auth/', include('social_django.urls', namespace='social')), 
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

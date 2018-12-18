@@ -1,7 +1,9 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-    <h1>Hello world</h1>
-
-    <p>This is a template</p>
-{% endblock %} 
+	{% if user.is_authenticated %}
+             <p class="display-4">Hello, {{ user.username }}</p>
+	{% else %}
+             <a class="lead" href="{% url 'login' %}">Log in</a>
+	{% endif %}
+{% endblock content %}
