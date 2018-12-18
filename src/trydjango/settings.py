@@ -165,3 +165,11 @@ DROPBOX_OAUTH2_TOKEN = 'zBxsqGWT-3AAAAAAAAAADtMkXICThzuLemowhG2biy9_AnnzX2Iu09gH
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #     }
 # }
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
