@@ -7,7 +7,7 @@ django-daterange-filter==1.3.0
 django-oauth-toolkit==1.2.0
 django-rest-framework-social-oauth2==1.1.0
 django-storages==1.7.1
-djangorestframework==3.9.0
+djangorestframework==3.9.1
 dropbox==9.3.0
 idna==2.8
 oauthlib==2.1.0
